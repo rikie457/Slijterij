@@ -6,6 +6,6 @@
  * Time: 13:41
  */
 
-class Product {
+class Product{
 
 }
