@@ -5,7 +5,9 @@
  * Date: 6-10-2017
  * Time: 13:44
  */
+include 'autoload.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -32,26 +34,9 @@
 
 <body>
 <div>
-  <nav class="navbar navbar-default navigation-clean-search">
-    <div class="container">
-      <div class="navbar-header"><a class="navbar-brand navbar-link" href="#" style="color:rgb(254,238,238);font-family:Raleway, sans-serif;">Stuk in m'n Kraag</a>
-        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      </div>
-      <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="nav navbar-nav">
-          <li class="active" role="presentation" style="font-family:Raleway, sans-serif;"><a href="#" style="color:rgb(255,255,255);">Home </a></li>
-          <li role="presentation"><a href="#" style="color:rgb(252,252,252);font-family:Raleway, sans-serif;">Producten </a></li>
-          <li role="presentation"><a href="#" style="color:rgb(252,254,255);font-family:Raleway, sans-serif;">Over Ons</a></li>
-        </ul>
-        <form class="navbar-form navbar-left" target="_self">
-          <div class="form-group">
-            <label class="control-label" for="search-field" style="background-color:#fffdfd;padding:7px;"><i class="glyphicon glyphicon-search"></i></label>
-            <input class="form-control search-field" type="search" name="search" id="search-field" style="padding:5px;background-color:#fcfbfb;">
-          </div>
-        </form><a class="btn btn-default navbar-btn navbar-right action-button" role="button" href="#" style="background-color:rgb(2,2,3);font-family:Raleway, sans-serif;">Registreer </a><a class="btn btn-default navbar-btn navbar-right action-button"
-                                                                                                                                                                                              role="button" href="#" style="background-color:rgb(2,117,252);font-family:Raleway, sans-serif;">Login</a></div>
-    </div>
-  </nav>
+  <?php
+include 'components/navigator.php';
+  ?>
 </div>
 <div id="header" style="background-color:#eef4f7;">
   <header>
@@ -74,33 +59,40 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row product-list dev">
-          <div class="col-md-4 col-sm-6 product-item animation-element slide-top-left">
-            <div class="product-container">
-              <div class="row">
-                <div class="col-md-12">
-                  <a href="#" class="product-image"><img src="assets/img/iphone6.jpg"></a>
-                </div>
+          <?php
+          $restults = $p->getProducts();
+          for ( $i = 0; $i < count($restults); $i++ ) {
+
+            echo '<div class="col-md-4 col-sm-6 product-item animation-element slide-top-left">
+      <div class="product-container">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="#" class="product-image"><img src= "assets/img/shop/' . $restults[$i]->image . '"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h2><a href="#">' . $restults[$i]->naam . ' </a></h2></div>
+        </div>
+        <div class="product-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+            class="fa fa-star"></i><i class="fa fa-star-half"></i><a href="#" class="small-text">82 reviews</a></div>
+         <div class="row">
+          <div class="col-xs-12">
+            <p class="product-description">' . $restults[$i]->descriptie . '</p>
+            <div class="row">
+              <div class="col-xs-6">
+                <button class="btn btn-default" type="button">Koop nu!</button>
               </div>
-              <div class="row">
-                <div class="col-xs-8">
-                  <h2><a href="#" style="font-family:Raleway, sans-serif;">iPhone 6s</a></h2></div>
-              </div>
-              <div class="product-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i><a href="#" class="small-text">82 reviews</a></div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare sem sed nisl dignissim, facilisis dapibus lacus vulputate. Sed lacinia lacinia magna. </p>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <button class="btn btn-default" type="button">Koop nu!</button>
-                    </div>
-                    <div class="col-xs-6">
-                      <p class="product-price">$599.00 </p>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-xs-6">
+                <p class="product-price">&euro; ' . $restults[$i]->prijs . '</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>';
+          }
+          ?>
         </div>
       </div>
     </div>

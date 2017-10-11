@@ -6,6 +6,9 @@
  * Time: 09:52
  */
 
+/**
+ * WIP
+ */
 class User {
   public static function register( $data ) {
     $warning = FALSE;
@@ -76,7 +79,7 @@ class User {
              Wachtwoord: ' . $data['email'] . '
             ------------------------------
             
-            http://www.tychoengberink.nl/Jukebox/php/index.php?email=' . $data['email'] . '&hash=' . $userdata['hash'] . '
+            http://www.tychoengberink.nl/Slijterij/php/index.php?email=' . $data['email'] . '&hash=' . $userdata['hash'] . '
             ';
       $headers = 'From:noreply@tychoengberink.nl' . "\r\n";
       mail($to, $subject, $email_message, $headers);
