@@ -43,11 +43,28 @@ include 'components/navigator.php';
     <h2 class="sr-only">Login Form</h2>
     <div class="illustration"><i class="typcn typcn-beer" style="color:rgb(2,117,252);"></i></div>
     <div class="form-group">
-      <header></header>
+      <input class="form-control" type="text" name="firstname" placeholder="Voornaam">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" name="surname" placeholder="Achternaam">
+    </div>
+    <div class="form-group">
       <input class="form-control" type="email" name="email" placeholder="Email">
     </div>
     <div class="form-group">
-      <input class="form-control" type="password" name="password" placeholder="Password">
+      <input class="form-control" type="text" id="zipcode" name="zipcode" placeholder="Postcode">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" id="housenumber" name="housenumber" placeholder="Huisnummer">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" name="adress" placeholder="Adres">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" name="city" placeholder="Plaats">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="password" name="password" placeholder="Wachtwoord">
     </div>
     <div class="form-group">
       <button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(2,117,252);">Registreer </button>
@@ -66,6 +83,24 @@ include 'components/navigator.php';
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/Animated-Pretty-Product-List-v12.js"></script>
-</body>
+<script>
 
+
+  $('#housenumber, #zipcode').blur(function () {
+    zipcodeval = $('input[name="zipcode"]').val();
+    housenumberval = $('input[name="housenumber"]').val();
+    console.log(zipcodeval);
+    console.log(housenumberval);
+    if(zipcodeval == '' || housenumberval == ''){
+      console.log('leeg');
+    }else{
+      console.log('vol');
+    }
+  });
+
+</script>
+</body>
+<?php
+//$response = $a->callApi('https://api.postcodeapi.nu/v2/addresses/?postcode=5038EA&number=19', array( 'X-Api-Key: 7tvURNTf7qaF8Nz9dNkih6nqUxAgeWbu5XwVNoFS' ));
+?>
 </html>
