@@ -8,7 +8,7 @@
 spl_autoload_register(function ( $class_name ) {
   include 'classes/' . $class_name . '.php';
 });
-
+$d = new Database("www.tychoengberink.nl", "slijterijuser", "slijterij", "slijterij");
 $p = new Product("www.tychoengberink.nl", "slijterijuser", "slijterij", "slijterij");
 $r = new Review("www.tychoengberink.nl", "slijterijuser", "slijterij", "slijterij");
-$a = new ApiCaller();
+$u = new User("www.tychoengberink.nl", "slijterijuser", "slijterij", "slijterij");

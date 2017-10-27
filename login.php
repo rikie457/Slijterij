@@ -28,7 +28,9 @@ include 'autoload.php';
   <link rel="stylesheet" href="assets/css/Navigation-Menu.css">
   <link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/Testimonials.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
 </head>
 
 <body>
@@ -39,9 +41,10 @@ include 'autoload.php';
 </div>
 <div class="testimonials-clean"></div>
 <div class="login-clean">
-  <form method="post">
+  <form method="post" id="loginform">
     <h2 class="sr-only">Login Form</h2>
     <div class="illustration"><i class="typcn typcn-beer" style="color:rgb(2,117,252);"></i></div>
+    <span id="errormessagelogin"></span>
     <div class="form-group">
       <input class="form-control" type="email" name="email" placeholder="Email">
     </div>
@@ -50,21 +53,27 @@ include 'autoload.php';
     </div>
     <div class="form-group">
       <button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(2,117,252);">Log In</button>
-    </div><a href="#" class="forgot">Wachtwoord vergeten??</a></form>
+    </div>
+    <a href="#" id="forgotlogin" class="forgot">Wachtwoord vergeten??</a></form>
 </div>
 <div class="article-clean"></div>
 <div class="footer-basic" style="background-color:rgb(3,0,0);">
   <footer>
-    <div class="social"><a href="#"><i class="icon ion-social-instagram" style="color:rgb(249,250,252);"></i></a><a href="#"><i class="icon ion-social-snapchat" style="color:rgb(249,250,252);"></i></a><a href="#"><i class="icon ion-social-twitter" style="color:rgb(249,250,252);"></i></a>
+    <div class="social"><a href="#"><i class="icon ion-social-instagram" style="color:rgb(249,250,252);"></i></a><a
+        href="#"><i class="icon ion-social-snapchat" style="color:rgb(249,250,252);"></i></a><a href="#"><i
+          class="icon ion-social-twitter" style="color:rgb(249,250,252);"></i></a>
       <a
         href="#"><i class="icon ion-social-facebook" style="color:rgb(249,250,252);"></i></a>
     </div>
     <p class="copyright" style="font-family:Raleway, sans-serif;">Stuk in m'n Kraag © 2017</p>
   </footer>
 </div>
-<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/main.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/Animated-Pretty-Product-List-v12.js"></script>
+
 </body>
 
 </html>

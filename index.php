@@ -123,8 +123,7 @@ include 'autoload.php';
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/Animated-Pretty-Product-List-v12.js"></script>
-<script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="includes/scripts/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>
