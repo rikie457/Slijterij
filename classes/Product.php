@@ -14,7 +14,7 @@ class Product extends Database {
     return $products;
   }
 
-  public function getFrontPageProducts(){
+  public function getFrontPageProducts() {
     $frontpageproducts = $this->select("SELECT *, P.naam AS 'productnaam' FROM HomePaginaItems HPI INNER JOIN Product P ON P.product_id = HPI.frontpageitem_id INNER JOIN ProductCategorie PC ON PC.productCategorie_id = P.ProductCategorie_productCategorie_id");
 
     return $frontpageproducts;
